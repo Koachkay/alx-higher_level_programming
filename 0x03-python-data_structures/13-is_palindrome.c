@@ -38,7 +38,6 @@ listint_t *reverse_listint(listint_t **head)
  *         If the linked list is a palindrome - 1.
  */
 int is_palindrome(listint_t **head)
-
 {
 	listint_t *tmp, *rev, *mid;
 	size_t size = 0, i;
@@ -50,7 +49,7 @@ int is_palindrome(listint_t **head)
 	while (tmp)
 	{
 		size++;
-		tmp = tmp->next;					
+		tmp = tmp->next;			
 	}
 
 	tmp = *head;
@@ -64,15 +63,15 @@ int is_palindrome(listint_t **head)
 	rev = reverse_listint(&tmp)
 	mid = rev;
 
-	tmp = *head;							
-	while (rev)							
+	tmp = *head;
+	while (rev)					
 	{
 		if (tmp->n != rev->n)
-			return (0);			
-		tmp = tmp->next;					
+			return (0);
+		tmp = tmp->next;	
 		rev = rev->next;					
 	}
-
 	reverse_listint(&mid);
+
 	return (1);
 }
